@@ -21,4 +21,4 @@ The render() method is of course called when a component gets updated,
 
 it has to re-render the HTML to the DOM, with the new changes.
 
-*/
+*/ 

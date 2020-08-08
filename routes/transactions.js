@@ -10,7 +10,7 @@ const {getTransactions,addTransaction,deleteTransaction} = require('../controlle
 
 router
 .route('/')
-.get(getTransactions)
+.get(getTransactions)//functions in the get returns data/message from the controller
 .post(addTransaction)
 
 

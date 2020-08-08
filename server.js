@@ -70,7 +70,10 @@ const transactions = require('./routes/transactions')
 
 const app = express()
 app.use(express.json())
-
+/*
+app.use(middleware) is called every time a request is sent to the server. app. use() used to Mounts the middleware 
+function or mount to a specified path,the middleware function is executed when the base path matches.
+*/
 if(process.env.NODE_ENV==='development'){
     app.use(morgan('dev'))
 }
@@ -81,6 +84,8 @@ app.use('/api/v1/transactions',transactions)
 if(process.env.NODE_ENV==='production'){
     app.use(express.static('client/build'))
     app.get('*',(req,res)=>res.sendFile(path.resolve(__dirname,'client','build','index.html')))
+    /*app.get() to handle GET requests and app.post to handle POST requests. For a full list, see app.METHOD. You can also use app.all() 
+    to handle all HTTP methods and app.use() to specify middleware as the callback function (See Using middleware for details). */
 }
 app.get('/', (req,res)=>res.send('Hello'))
 

@@ -5,6 +5,9 @@ they are the collections of functions can be used but require(..)
 //@desc   get all the transactions
 //@route  get /api/vi/transations
 //@acess  public
+
+//in here we don't want to write with promise we declare
+//async ande use await and return data until we got from database
 exports.getTransactions =async (req,res,next)=>{
     //res.send('Get transactions from transaction controller')
     try{
